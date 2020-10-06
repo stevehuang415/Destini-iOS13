@@ -25,9 +25,7 @@ class ViewController: UIViewController {
     
     @IBAction func choiceMade(_ sender: UIButton) {
         
-        let userChoice = sender.currentTitle!
-        
-        storyBrain.nextStroy(userChoice)
+        storyBrain.nextStroy(sender.currentTitle!)
         
         updateUI()
         
@@ -36,9 +34,9 @@ class ViewController: UIViewController {
     
     func updateUI() {
         
-        storyLabel.text = storyBrain.stories[storyBrain.storyNumber].title
-        choice1Button.setTitle(storyBrain.stories[storyBrain.storyNumber].choice1, for: .normal)
-        choice2Button.setTitle(storyBrain.stories[storyBrain.storyNumber].choice2, for: .normal)
+        storyLabel.text = storyBrain.getitle()
+        choice1Button.setTitle(storyBrain.getChoice1(), for: .normal)
+        choice2Button.setTitle(storyBrain.getChoice2(), for: .normal)
         
     }
     
